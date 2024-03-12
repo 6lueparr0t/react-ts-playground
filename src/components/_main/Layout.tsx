@@ -1,6 +1,6 @@
 import {useEffect} from "react";
-import App from "@/App";
-import "@/Layout.scss";
+import App from "@/components/_main/App";
+import "@/components/_main/Layout.scss";
 
 function Layout() {
   useEffect(() => {
