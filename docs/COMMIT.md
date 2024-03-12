@@ -19,6 +19,7 @@
 - test: Adding missing tests
 - chore: Changes to the build process or auxiliary tools and libraries such as documentation generation
 - typo:
+- add : Code or Package add
 - remove : Code or Package remove
 
 ## reference
