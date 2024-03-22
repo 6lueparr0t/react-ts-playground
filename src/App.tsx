@@ -1,29 +1,29 @@
-import { useState } from "react";
-import DarkMode from "@/components/_common/DarkMode";
-import { Button } from "@/components/ui/button";
-import "@/App.scss";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+
+import Root from "@/pages/Root";
+import HomePage from "@/pages/Home";
+import TestPage, {action as TestAction} from "@/pages/Test";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    // errorElement: <Error />,
+    children: [
+      { index: true, path: "", element: <HomePage /> },
+      {
+        path: "test",
+        element: <TestPage />,
+        action: TestAction,
+      },
+    ],
+  },
+]);
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  const helloHandler = () => {
-    alert("Hello, World!");
-  };
-
   return (
     <>
-      <div>
-        <button
-          className="m-2 bg-gray-800 text-white dark:bg-white dark:text-gray-800"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          count is {count}
-        </button>
-        <div className="m-2 flex justify-center items-center">
-          <DarkMode />
-        </div>
-        <Button onClick={helloHandler}>Button</Button>
-      </div>
+      <RouterProvider router={router}></RouterProvider>
     </>
   );
 }

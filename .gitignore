@@ -40,12 +40,12 @@ lerna-debug.log*
 
 # Misc
 .DS_Store
-# .env
+.env
 .env.local
-# .env.test
-# .env.development
-# .env.staging
-# .env.production
+.env.test
+.env.development
+.env.staging
+.env.production
 
 # PNPM
 .pnpm-store/**
